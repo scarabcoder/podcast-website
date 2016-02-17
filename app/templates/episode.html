@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<p>{{item.title}}</p>
+<img src="{{img}}" width=100px>
+</br>
+<audio src="{{item.links[1].href}}" controls>
+<p>Whoops! Were weren't able to load the audio. Please report this to me, so I can fix it.</p>
+</audio>
+{% endblock %}

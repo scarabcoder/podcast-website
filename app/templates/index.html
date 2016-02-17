@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    {% for post in feed %}
+    <div id="post">
+    {% if post.image %}
+    <div id="image">
+    <img src="{{post.image.href}}" width=180px>
+    </div>
+    {% endif %}
+    <div id="podcastDesc">
+    <h3><a href="/episode/{{post.title|replace(" ", "-")|replace("?", "")}}">{{post.title}}</a></h3>
+    <p>{{post.subtitle}}</p>
+    </div>
+    <hr>
+  </div>
+    {% endfor %}
+{% endblock %}

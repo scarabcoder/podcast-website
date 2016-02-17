@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+    #profile-link {
+      font-size:13px;
+      text-align: right;
+      color:gray;
+
+    }
+    #handle {
+      color:gray;
+    }
+    #post {
+      padding: 5px 5px 5px 5px;
+    }
+    #navbar {
+      text-align:center;
+      font-size:25px;
+
+    }
+
+    #image {
+      display:inline-block;
+      margin-right:10px;
+    }
+    #podcastDesc {
+      display:inline-block;
+    }
+    </style>
+    <title>Kids Who Code Podcast</title>
+    <script src="//content.jwplatform.com/libraries/eX4mp13.js"></script>
+  </head>
+  <body>
+    <div id="navbar"><a href="/">Home</a> - <a href="/episode/latest">Latest episode</a> - <a href="/about">About</a></div>
+    {% block content %}{% endblock %}
+  </body>
+</html>
