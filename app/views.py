@@ -2,13 +2,18 @@ from app import app
 from flask import render_template
 from flask import abort
 import feedparser
+import re
 feed = feedparser.parse('http://kidswhocode.podomatic.com/rss2.xml').entries
 updated = []
 x = 0
+
 for item in feed:
 
     updated.append(item.title.replace(" ", "-").replace("?", "").lower())
     x = x + 1
+
+
+
 for item in updated:
     print item
 @app.route('/')

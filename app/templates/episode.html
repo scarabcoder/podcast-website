@@ -1,9 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-<p>{{item.title}}</p>
-<img src="{{img}}" width=100px>
+<h2>{{item.title}}</h2>
+<img src="{{item.image.href}}" width=100px>
+</br>
 </br>
 <audio src="{{item.links[1].href}}" controls>
 <p>Whoops! Were weren't able to load the audio. Please report this to me, so I can fix it.</p>
 </audio>
+</br>
+<a href="{{item.links[1].href}}">Download audio (mp3)</a>
+<p>{{item.description|replace("<img", "<imgg")|replace("\n"," <br>")|safe|urlize(100,true)}}
 {% endblock %}
