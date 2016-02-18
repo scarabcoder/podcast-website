@@ -22,22 +22,22 @@ def index():
 
     return render_template('index.html',
                             feed=feed,
-                            title = 'Scarab\'s blog')
+                            title = 'Home')
 
 @app.route("/episode/<episode>")
 def show_episode(episode):
     print episode.lower()
     if(episode.lower() in updated):
         item = feed[updated.index(episode.lower())]
-        return render_template("episode.html", item=item, img = item.image.href)
+        return render_template("episode.html", item=item,title = item.title, img = item.image.href)
     else:
         abort(404)
 @app.route("/episode/latest")
 def show_latest():
-    return render_template("episode.html", item=feed[0])
+    return render_template("episode.html", title="Latest Episode", item=feed[0])
 @app.route("/about")
 def show_about():
-    return render_template("about.html")
+    return render_template("about.html", title="About")
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404

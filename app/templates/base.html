@@ -16,9 +16,17 @@
     #navbar {
       text-align:center;
       font-size:25px;
-
+      color:orange;
     }
-
+    #navbar a {
+      color:orange;
+      background:gray;
+      padding: 5px 5px 5px 5px;
+      border-radius:10px;
+    }
+    html {
+      background:url("http://static1.squarespace.com/static/500ddae884aea2e79c8ccbe2/t/55b1325ae4b0b3f24c3acff1/1437676122105/programmingbg.jpg") fixed;
+    }
     #image {
       display:inline-block;
       margin-right:10px;
@@ -26,12 +34,38 @@
     #podcastDesc {
       display:inline-block;
     }
+    #body {
+      background-color:gray;
+       width: 55%;
+       position: absolute;
+       left: 21%;
+       top: 30%;
+       margin-top: -10%;
+       padding: 15px 15px 15px 15px;
+       border-radius:15px;
+    }
+    #podcast-image {
+      display: block;
+      margin: 0 auto;
+    }
+    #center-image {
+      display: block;
+      margin: 0 auto;
+
+    }
     </style>
-    <title>Kids Who Code Podcast</title>
+    {% if title %}
+    <title>Kids Who Code - {{title}}</title>
+    {% else %}
+    <title>Kids Who Code</title>
+    {% endif %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <script src="//content.jwplatform.com/libraries/eX4mp13.js"></script>
   </head>
   <body>
     <div id="navbar"><a href="/">Home</a> - <a href="/episode/latest">Latest episode</a> - <a href="/about">About</a></div>
+    <div id="body">
     {% block content %}{% endblock %}
+  </div>
   </body>
 </html>

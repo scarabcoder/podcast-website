@@ -2,16 +2,24 @@
 {% block content %}
     {% for post in feed %}
     <div id="post">
+      <br>
     {% if post.image %}
     <div id="image">
     <img src="{{post.image.href}}" width=180px>
     </div>
     {% endif %}
     <div id="podcastDesc">
+      <audio src="{{post.links[1].href}}" controls>
+      <p>Whoops! Were weren't able to load the audio. Please report this to me, so I can fix it.</p>
+      </audio>
     <h3><a href="/episode/{{post.title|replace(" ", "-")|replace("?", "")}}">{{post.title}}</a></h3>
-    <p>{{post.subtitle}}</p>
+    <p><div id="subtitle">{{post.subtitle}}</div></p>
+    </br>
+    </br>
+    <br>
     </div>
     <hr>
+    <br>
   </div>
     {% endfor %}
 {% endblock %}
