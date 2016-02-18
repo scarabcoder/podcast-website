@@ -3,7 +3,7 @@ from flask import render_template
 from flask import abort
 import feedparser
 import re
-feed = feedparser.parse('http://kidswhocode.podomatic.com/rss2.xml').entries
+feed = feedparser.parse('https://kidswhocode.podomatic.com/rss2.xml').entries
 updated = []
 x = 0
 
